@@ -1,4 +1,3 @@
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 //Escreva um programa que leia três valores com ponto flutuante de dupla precisão: A, B e C.
@@ -11,7 +10,7 @@ import java.util.Scanner;
 public class ExIntro008 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		DecimalFormat dF = new DecimalFormat("0.00");
+		
 		//entrada usuário
 		System.out.println("Digite o valor de A: ");
 		double vA = input.nextDouble();
@@ -22,12 +21,12 @@ public class ExIntro008 {
 		input.close();
 		//processamento
 		double areaTri = (vA * vC) / 2;
-		double areaC = (3.14 * Math.pow(vC, 2));
+		double areaC = (Math.PI * Math.pow(vC, 2));
 		double areaTra = (vA + vB) * (vC/2);
 		double areaQ = (Math.pow(vB, 2));
 		double areaR = vA * vB;
 		//saída
-		System.out.printf("Aqui estão as áreas!!! \n do triângulo: "+ dF.format(areaTri) +" \n do Círculo: "+ dF.format(areaC) +" \n "
-				+ "do Trapézio: "+ dF.format(areaTra) +" \n do Quadrado: "+ dF.format(areaQ) +" \n do Retângulo: "+ dF.format(areaR));
+		System.out.printf("Aqui estão as áreas!!! \n do Triângulo: "+ (areaTri) +" \n do Círculo: "+ (areaC) +" \n "
+				+ "do Trapézio: "+ (areaTra) +" \n do Quadrado: "+ (areaQ) +" \n do Retângulo: "+ (areaR));
 	}	
 }
