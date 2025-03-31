@@ -10,8 +10,15 @@ public class ExLR011 {
 		System.out.println("Digite um número inteiro: ");
 		int numero = input.nextInt();
 		
-		for (int i = 0; i < numero; i++) {
-			int fatorial *= i ;
+		input.close();
+		
+		int fatorial = numero;
+		for (int i = 1; i < numero; i++) {
+			fatorial *= i;
 		}
+		
+		//saída
+		System.out.printf("O fatorial de %d é %d! \n", numero, fatorial);
+		
 	}
 }
