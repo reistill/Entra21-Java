@@ -1,23 +1,15 @@
-import java.util.Scanner;
-
+/*
+Crie uma array de 5 elementos e imprima os últimos elementos por primeiro
+*/
 public class ExVM001 {
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
+		//vetor de string com 5 elementos 
+		String elementos[] = {"borracha", "delegrego", "9", "loucura", "olá", "grande sp", "mundo", "mongos"};
 		
-		//entrada de usuário
-		System.out.println("Digite a quantidade de familiares: ");
-		int familiares = input.nextInt();
+		int tam = elementos.length-1;
 		
-		//vetor recebe o número de familiares
-		int idades[] = new int[familiares];
-		
-		//
-		for (int i = 0; i < familiares; i++) {
-			System.out.printf("Digite as idades dos seus %d familiares:", familiares);
-			idades[i] = input.nextInt();
-			System.out.printf("A idade do %d° familiar  é: %d \n", i+1, idades[i]);
+		for (int i = tam; i >= 0; i--) {
+			System.out.println("Os "+ elementos.length + " elementos  do vetor ao contrário fica: " + elementos[i] + "!");
 		}
-		
-		input.close();
 	}
 }
