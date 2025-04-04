@@ -30,7 +30,7 @@ public class ExVM010 {
 		Scanner input = new Scanner(System.in);
 		
 		//vetores
-		String rapaz[];
+		String rapaz;
 		String moca[];
 		
 		//variável
@@ -41,7 +41,9 @@ public class ExVM010 {
 			
 			System.out.println("Você gosta de música sertaneja?");
 			String resposta1 = input.next();
-			
+			if (i == 0) {
+				rapaz[0] = resposta1;
+			}
 			System.out.println("Você gosta de futebol?");
 			String resposta2 = input.next();
 		
