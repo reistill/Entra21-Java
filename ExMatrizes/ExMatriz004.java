@@ -39,6 +39,8 @@ public class ExMatriz004 {
 		int casaMaisCara = Integer.MIN_VALUE;
 		int qntdQuartosMaisCara = 0;
 		int menorqntdQuartos = Integer.MAX_VALUE;
+		int casasMais300mil = 0;
+		double somaTamanho = 0;
 		double soma = 0;
 		
 		for(int i = 0; i < matriz.length; i++) {
@@ -65,6 +67,12 @@ public class ExMatriz004 {
 				if (matriz[i][1] < menorqntdQuartos)  {
 					menorqntdQuartos = matriz[i][1];
 				}
+				
+				//encontra as casas com maior valor e pega seu tamanho
+				if (matriz[i][2] > 300000) {
+					somaTamanho += matriz[i][0];
+					casasMais300mil += 1;
+				}
 			}	
 		}
 		
@@ -76,5 +84,7 @@ public class ExMatriz004 {
 		System.out.println("A casa com mais quartos tem: " + qntdQuartosMaisCara + " quartos e seu valor é: " + casaMaisCara + "R$");
 		//imprime a casa com mais quartos e a casa com menos quartos
 		System.out.println("A casa com mais quartos tem: " + qntdQuartosMaisCara + " e a casa com menos quartos tem: " + menorqntdQuartos + " a diferença de quartos é de: " + (qntdQuartosMaisCara-menorqntdQuartos) + " quartos!");
+		//imprime a média de tamanho das casas que custam mais de 300 mil
+		System.out.println("A média de tamahno das casas que custam mais de 300 mil: " + (somaTamanho/casasMais300mil) + "m²");
 	}
 }

@@ -18,7 +18,7 @@ public class ExMatriz003 {
 				{2, 8}, 
 				{60, 1800}
 							};
-		
+		//matrizSoma recebe o tamanho de linhas e de colunas da matriz1
 		int matrizSoma[][] = new int[matriz1.length][matriz1[0].length];
 		
 		//percorre a matriz1 e matriz2 e coloca na matrizSoma a soma dos valores no índice das respectivas matrizes
