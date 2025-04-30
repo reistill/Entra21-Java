@@ -14,6 +14,14 @@ public class Mercado {
 	int laranPorAno;
 	double precoLaran;
 	
+	public Mercado(String nome, int macaPorAno, double precoMaca, int laranPorAno, double precoLaran) {
+		this.nome = nome;
+		this.macaPorAno = macaPorAno;
+		this.precoMaca = precoMaca;
+		this.laranPorAno = laranPorAno;
+		this.precoLaran = precoLaran;
+	}
+
 	public double receitaMaca() {
 		return macaPorAno * precoMaca;
 	}

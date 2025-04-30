@@ -1,7 +1,4 @@
 /*
-Utilizando a classe Mercado.
-Atribua valores às variáveis da classe Mercado para cada um dos objetos de Mercado.
-Calcule:
 a) Quem teve a maior receita vendendo maçãs?
 b) Quem teve a maior receita vendendo laranjas?
 c) Qual das lojas teve a maior receita?
@@ -11,7 +8,22 @@ f) Juntando as 3 lojas, a franquia teve uma receita maior vendendo maçãs ou la
 */
 
 public class Mercado {
-	public static void main(String[] args) {
-		
+	String nome;
+	int macaPorAno;
+	double precoMaca;
+	int laranPorAno;
+	double precoLaran;
+	
+	public double receitaMaca() {
+		return macaPorAno * precoMaca;
 	}
+	
+	public double receitaLaranja() {
+		return laranPorAno * precoLaran;
+	}
+	
+	public double receitaTotal() {
+		return receitaMaca() + receitaLaranja();
+	}
+	
 }

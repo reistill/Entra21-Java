@@ -11,41 +11,32 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		
-		//objeto
-		Mercado unidade1 = new Mercado();
+		//objeto + instânciando
+		Mercado unidade1 = new Mercado("Blumenau", 4000, 2.50, 3500, 3);
+
 		
-		//instânciando objeto
-		unidade1.nome = "Blumenau";
-		unidade1.precoMaca = 2.50;
-		unidade1.macaPorAno = 4000;
-		unidade1.precoLaran = 3.00;
-		unidade1.laranPorAno = 3500;
-		
-		//objeto2
-		Mercado unidade2 = new Mercado();
-		
-		//instânciando objeto2
-		unidade2.nome = "Joinville";
-		unidade2.precoMaca = 2.80;
-		unidade2.macaPorAno = 6000;
-		unidade2.precoLaran = 3.50;
-		unidade2.laranPorAno = 5500;
-		
-		//objeto3
-		Mercado unidade3 = new Mercado();
-		
-		//instânciando objeto3
-		unidade3.nome = "Florianópolis";
-		unidade3.precoMaca = 3.50;
-		unidade3.macaPorAno = 8000;
-		unidade3.precoLaran = 3.80;
-		unidade3.laranPorAno = 6500;
+		//objeto2 + instânciando
+		Mercado unidade2 = new Mercado("Joinville", 6000, 2.80, 5500, 3.50);
+
+		//objeto3 + instânciando
+		Mercado unidade3 = new Mercado("Florianópolis", 8000, 3.50, 6500, 3.80);
 		
 		Mercado vetor[] = {unidade1, unidade2, unidade3};
 		
 		//variáveis
 		double maiorReceita = Double.MIN_VALUE;
 		double menorReceita = Double.MAX_VALUE;
+		double maiorReceitaLaranja = Double.MIN_VALUE;
+		double maiorReceitaMaca = Double.MIN_VALUE;
+		double receitaTotalLaranja = 0;
+		double receitaTotalMaca = 0;
+		
+		
+		//Percorre o vetor e exibe os objetos 
+		for (int i = 0; i < vetor.length; i++) {
+			System.out.println("\n" + vetor[i].nome + "\nPreço Laranja:" + vetor[i].precoLaran +"\nLaranjas vendidas por ano:" + vetor[i].laranPorAno + 
+					"\nPreço Maça:" + vetor[i].precoMaca + "\nMaças vendidas por ano:" + vetor[i].macaPorAno+"\n");
+		}
 		
 		//encontrar maior receita
 		for (int i = 0; i < vetor.length; i++) {
@@ -74,19 +65,33 @@ public class Principal {
 		
 		//maior receita laranjas
 		for (int i = 0; i < vetor.length; i++) {
-			
+			if (vetor[i].receitaLaranja() > maiorReceitaLaranja) {
+				maiorReceitaLaranja = vetor[i].receitaLaranja();
+				if (i == 2) {
+					System.out.println("O mercado de " + vetor[i].nome + " tem a maior receita sobre Laranjas, sendo: " + vetor[i].receitaLaranja() + " R$");
+				}
+			}
 		}
 		
 		
 		//maior receita maças
-		
-		/* Percorre o vetor e exibe os objetos 
 		for (int i = 0; i < vetor.length; i++) {
-			
-			System.out.println("\n" + vetor[i].nome + "\nPreço Laranja:" + vetor[i].precoLaran +"\nLaranjas vendidas por ano:" + vetor[i].laranPorAno + 
-					"\nPreço Maça:" + vetor[i].precoMaca + "\nMaças vendidas por ano:" + vetor[i].macaPorAno);
+			if (vetor[i].receitaMaca() > maiorReceitaMaca) {
+				maiorReceitaMaca = vetor[i].receitaMaca();
+				if (i == 2) {
+					System.out.println("O mercado de " + vetor[i].nome + " tem a maior receita sobre Maças, sendo: " + vetor[i].receitaMaca() + " R$");
+				}
+			}
 		}
-		*/
+		
+		//quem vendeus mais 3 franquias somadas, laranja ou maça
+		for (int i = 0; i < vetor.length; i++) {
+			receitaTotalLaranja += vetor[i].receitaLaranja();
+			receitaTotalMaca += vetor[i].receitaMaca();
+		}
+		
+		System.out.println("O total de receita sobre Maças: " + receitaTotalMaca + " R$");
+		System.out.println("O total de receita sobre Laranjas: " + receitaTotalLaranja + " R$");
 		
 	}	
 }
