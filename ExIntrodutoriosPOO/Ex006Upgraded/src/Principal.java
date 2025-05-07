@@ -42,18 +42,27 @@ public class Principal {
 		for (int i = 0; i < vetor.length; i++) {
 			if (vetor[i].receitaTotal() > maiorReceita) {
 				maiorReceita = vetor[i].receitaTotal();
-				if (i == 2) {
-					System.out.println("O mercado de " + vetor[i].nome + " tem a maior receita, sendo: " + vetor[i].receitaTotal() + " R$");
-				}
+				
 			}
+		}
+		
+		//vai imprimir mercado com maior receita
+		for (int i = 0; i < vetor.length; i++) {
+			if (maiorReceita == vetor[i].receitaTotal())
+				System.out.println("O mercado de " + vetor[i].nome + " tem a maior receita, sendo: " + vetor[i].receitaTotal() + " R$");
 		}
 		
 		//encontrar menor receita
 		for (int i = 0; i < vetor.length; i++) {
 			if (vetor[i].receitaTotal() < menorReceita) {
 				menorReceita = vetor[i].receitaTotal();
-				System.out.println("O mercado de " + vetor[i].nome + " tem a menor receita, sendo: " + vetor[i].receitaTotal() + " R$");
 			}
+		}
+		
+		//vai imprimir mercado com menor receita
+		for (int i = 0; i < vetor.length; i++) {
+			if (menorReceita == vetor[i].receitaTotal())
+				System.out.println("O mercado de " + vetor[i].nome + " tem a menor receita, sendo: " + vetor[i].receitaTotal() + " R$");
 		}
 		
 		//encontrar receita do meio
@@ -67,22 +76,27 @@ public class Principal {
 		for (int i = 0; i < vetor.length; i++) {
 			if (vetor[i].receitaLaranja() > maiorReceitaLaranja) {
 				maiorReceitaLaranja = vetor[i].receitaLaranja();
-				if (i == 2) {
-					System.out.println("O mercado de " + vetor[i].nome + " tem a maior receita sobre Laranjas, sendo: " + vetor[i].receitaLaranja() + " R$");
-				}
 			}
 		}
 		
+		//vai imprimir mercado com maior receita de laranjas
+		for (int i = 0; i < vetor.length; i++) {
+			if (maiorReceitaLaranja == vetor[i].receitaLaranja())
+				System.out.println("O mercado de " + vetor[i].nome + " tem a maior receita sobre Laranjas, sendo: " + vetor[i].receitaLaranja() + " R$");
+			}
 		
 		//maior receita maças
 		for (int i = 0; i < vetor.length; i++) {
 			if (vetor[i].receitaMaca() > maiorReceitaMaca) {
 				maiorReceitaMaca = vetor[i].receitaMaca();
-				if (i == 2) {
-					System.out.println("O mercado de " + vetor[i].nome + " tem a maior receita sobre Maças, sendo: " + vetor[i].receitaMaca() + " R$");
-				}
 			}
 		}
+		
+		//vai imprimir mercado com maior receita de maças
+		for (int i = 0; i < vetor.length; i++) {
+			if (maiorReceitaMaca == vetor[i].receitaMaca())
+				System.out.println("O mercado de " + vetor[i].nome + " tem a maior receita sobre Maças, sendo: " + vetor[i].receitaMaca() + " R$");
+			}
 		
 		//quem vendeus mais 3 franquias somadas, laranja ou maça
 		for (int i = 0; i < vetor.length; i++) {

@@ -23,18 +23,23 @@ public class Principal {
 		//variáveis
 		int maiorQntdPassageiros = Integer.MIN_VALUE;
 		double maiorAutonomia = Double.MIN_VALUE;
+		double maiorDistancia = Double.MIN_VALUE;
+		
+		for (int i = 0; i < vetor.length; i++) {
+			System.out.println(vetor[i]);
+		}
 		
 		//encontrar a aeronave com mais passageiros
 		for (int i = 0; i < vetor.length; i++) {
-			if (vetor[i].passageiros > maiorQntdPassageiros) {
-				maiorQntdPassageiros = vetor[i].passageiros;
+			if (vetor[i].getPassageiros() > maiorQntdPassageiros) {
+				maiorQntdPassageiros = vetor[i].getPassageiros();
 			}
 		}
 		
 		//vai imprimir aeronave com mais passageiros
 		for (int i = 0; i < vetor.length; i++) {
-			if (maiorQntdPassageiros == vetor[i].passageiros)
-			System.out.println("A aeronave " + vetor[i].modelo + " é a maior em capacidade de passageiros, com: " + maiorQntdPassageiros);
+			if (maiorQntdPassageiros == vetor[i].getPassageiros())
+			System.out.println("A aeronave " + vetor[i].getModelo() + " é a maior em capacidade de passageiros, com: " + maiorQntdPassageiros);
 		}
 		
 		//encontrar a aeronave com mais autonomia
@@ -47,10 +52,21 @@ public class Principal {
 		//vai imprimir aeronave com mais autonomia
 		for (int i = 0; i < vetor.length; i++) {
 			if (maiorAutonomia == vetor[i].autonomiaAeronave())
-			System.out.println("A aeronave " + vetor[i].modelo + " é a maior em Autonomia, com: " + maiorAutonomia);
+			System.out.println("A aeronave " + vetor[i].getModelo() + " é a maior em Autonomia, com: " + maiorAutonomia);
 		}
 		
+		//qual aeronave voa mais longe em velocidade máxima
+		for (int i = 0; i < vetor.length; i ++ ) {
+			if (vetor[i].distanciaMax() > maiorDistancia) {
+				maiorDistancia = vetor[i].distanciaMax();
+			}
+		}
 		
+		//vai imprimir aeronave que voa mais longe
+		for (int i = 0; i < vetor.length; i++) {
+			if (maiorDistancia == vetor[i].distanciaMax())
+			System.out.println("A aeronave " + vetor[i].getModelo() + " é a que voa mais longe, com: " + maiorDistancia);
+		}
 	}
 	
 }

@@ -17,7 +17,7 @@ public class Principal {
 		Scanner input = new Scanner(System.in);
 		
 		Empregado e1 = new Empregado();
-		e1.id = 0;
+		e1.id = "0001582";
 		e1.nome = "João Ribeiro";
 		e1.sobrenome = "Da Silva";
 		e1.salarioMensal = 1500;

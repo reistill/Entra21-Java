@@ -15,18 +15,18 @@ longe?
 */
 
 public class Aeronave {
-	String modelo;
-	int passageiros;
-	double velocidadeMaxima;
-	double capacidadeCombustivel;
-	double queimaCombustivelMinuto;
+	private String modelo;
+	private int passageiros;
+	private double velocidadeMaxima;
+	private double capacidadeCombustivel;
+	private double queimaCombustivelMinuto;
 	
 	public Aeronave(String modelo, int passageiros, double velocidadeMaxima, double capacidadeCombustivel, double queimaCombustivelMinuto) {
-		this.modelo = modelo;
-		this.passageiros = passageiros;
-		this.velocidadeMaxima = velocidadeMaxima;
-		this.capacidadeCombustivel = capacidadeCombustivel;
-		this.queimaCombustivelMinuto = queimaCombustivelMinuto;
+		setModelo(modelo);
+		setPassageiros(passageiros);
+		setVelocidadeMaxima(velocidadeMaxima);
+		setCapacidadeCombustivel(capacidadeCombustivel);
+		setQueimaCombustivelMinuto(queimaCombustivelMinuto);
 	}
 	
 	public double autonomiaAeronave() {
@@ -34,7 +34,68 @@ public class Aeronave {
 	}
 	
 	public double distanciaMax() {
-		return autonomiaAeronave() * velocidadeMaxima;
+		return autonomiaAeronave() * velocidadeMaxima / 60;
 	}
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		if (modelo == null || modelo.isBlank()) {
+			System.err.println("Não existem modelo vazio ou em branco!");
+		} else {
+			this.modelo = modelo;
+		}
+	}
+
+	public int getPassageiros() {
+		return passageiros;
+	}
+
+	public void setPassageiros(int passageiros) {
+		if (passageiros < 0) {
+			System.err.println("Não existe quantidade negativa de passageiros!"); 
+		} else {
+			this.passageiros = passageiros;
+		}
+	}
+
+	public double getVelocidadeMaxima() {
+		return velocidadeMaxima;
+	}
+
+	public void setVelocidadeMaxima(double velocidadeMaxima) {
+		if (velocidadeMaxima < 0) {
+			System.err.println("Não existe velocidade negativa!"); 
+		} else {
+			this.velocidadeMaxima = velocidadeMaxima;
+		}
+	}
+	
+
+	public double getCapacidadeCombustivel() {
+		return capacidadeCombustivel;
+	}
+
+	public void setCapacidadeCombustivel(double capacidadeCombustivel) {
+		this.capacidadeCombustivel = capacidadeCombustivel;
+	}
+
+	public double getQueimaCombustivelMinuto() {
+		return queimaCombustivelMinuto;
+	}
+
+	public void setQueimaCombustivelMinuto(double queimaCombustivelMinuto) {
+		this.queimaCombustivelMinuto = queimaCombustivelMinuto;
+	}
+
+	@Override
+	public String toString() {
+		return "Aeronave: " + modelo + "; \npassageiros: " + passageiros + "; \nvelocidadeMaxima: " + velocidadeMaxima
+				+ "; \ncapacidadeCombustivel: " + capacidadeCombustivel + "; \nqueimaCombustivelMinuto: "
+				+ queimaCombustivelMinuto + ";\n";
+	}
+	
 	
 }

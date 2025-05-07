@@ -11,7 +11,7 @@ Modificar o salário, o parâmetro do método deve ser o percentual de aumento
 */
 
 public class Empregado {
-	int id;
+	String id;
 	String nome;
 	String sobrenome;
 	double salarioMensal;
@@ -24,7 +24,7 @@ public class Empregado {
 		return nome + " " + sobrenome;
 	}
 	
-	public double modificarSalario(double num) {
-		return salarioMensal + (salarioMensal * num);
+	public double modificarSalario(double porcentual) {
+		return salarioMensal + (salarioMensal * porcentual);
 	}
 }
