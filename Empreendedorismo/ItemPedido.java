@@ -3,8 +3,8 @@ public class ItemPedido {
     private int quantidade;
 
     public ItemPedido(Produto produto, int quantidade) {
-        this.produto = produto;
-        this.quantidade = quantidade;
+        setProduto(produto);
+        setQuantidade(quantidade);
     }
 
     public double getSubtotal() {
@@ -35,6 +35,4 @@ public class ItemPedido {
     public double getSubtotal() {
         return produto.getPreco() * quantidade;
     }
-}
-
 }
