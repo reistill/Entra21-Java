@@ -1,0 +1,65 @@
+public class Smartcomanda {
+    private int id;
+    private Cliente cliente;
+    private Mesa mesaAtual;
+    private boolean modoAssistido; // true = atendimento humano
+
+    public Smartcomanda(int id, boolean modoAssistido) {
+        this.id = id;
+        this.modoAssistido = modoAssistido;
+    }
+
+    public void conectarNaMesa(Mesa mesa) {
+        this.mesaAtual = mesa;
+        mesa.setOcupada(true);
+    }
+
+    public void desconectarDaMesa() {
+        if (mesaAtual != null) {
+            mesaAtual.setOcupada(false);
+            mesaAtual = null;
+        }
+    }
+
+    public void chamarGarcom() {
+        System.out.println("Garçom chamado na mesa: " + mesaAtual.getNumero());
+    }
+    
+    public Smartcomanda(int id, boolean modoAssistido) {
+        this.id = id;
+        this.modoAssistido = modoAssistido;
+    }
+    
+        // Getter and Setter methods
+    public int getId() {
+        return id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public Cliente getCliente() {
+        return cliente;
+    }
+    
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+    
+    public Mesa getMesaAtual() {
+        return mesaAtual;
+    }
+    
+    public void setMesaAtual(Mesa mesaAtual) {
+        this.mesaAtual = mesaAtual;
+    }
+    
+    public boolean isModoAssistido() {
+        return modoAssistido;
+    }
+    
+    public void setModoAssistido(boolean modoAssistido) {
+        this.modoAssistido = modoAssistido;
+    }
+}
